@@ -1,0 +1,29 @@
+aid: uber-direct
+url: https://raw.githubusercontent.com/api-evangelist/uber-direct/refs/heads/main/apis.yml
+name: Uber Direct
+x-type: company
+description: >-
+  Uber Direct is Uber's last-mile delivery platform for businesses. APIs let merchants request, track, and manage on-demand and scheduled deliveries via the Uber driver network.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Logistics
+  - Last Mile
+  - Delivery
+  - Uber
+  - API
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://www.uber.com/us/en/business/services/deliveries/
+  - type: Plans
+    url: plans/uber-direct-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/uber-direct-rate-limits.yml
+  - type: FinOps
+    url: finops/uber-direct-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
