@@ -3,21 +3,39 @@ url: https://raw.githubusercontent.com/api-evangelist/uber-direct/refs/heads/mai
 name: Uber Direct
 x-type: company
 description: >-
-  Uber Direct is Uber's last-mile delivery platform for businesses. APIs let merchants request, track, and manage on-demand and scheduled deliveries via the Uber driver network.
+  Uber Direct is Uber's last-mile delivery-as-a-service platform that lets merchants dispatch couriers via the Uber network for on-demand and scheduled deliveries.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Logistics
-  - Last Mile
-  - Delivery
-  - Uber
-  - API
+  - Last Mile Delivery
+  - Couriers
+  - Fulfillment
+  - DaaS
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: uber-direct:uber-direct-api
+    name: Uber Direct API
+    description: >-
+      Uber Direct API (DaaS) for quoting, creating, tracking, and managing deliveries through the Uber courier network. Includes Direct, Organizations, Courier Pick & Pack, Refund, and Business Location Management APIs plus webhook subscriptions.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.uber.com/docs/deliveries
+    baseURL: https://api.uber.com/v1/customers
+    tags:
+      - Logistics
+      - Delivery
+      - REST
+    properties:
+      - type: Documentation
+        url: https://developer.uber.com/docs/deliveries
+      - type: Authentication
+        url: https://developer.uber.com/docs/deliveries/guides/authentication
 common:
   - type: Website
     url: https://www.uber.com/us/en/business/services/deliveries/
+  - type: Documentation
+    url: https://developer.uber.com/docs/deliveries
   - type: Plans
     url: plans/uber-direct-plans-pricing.yml
   - type: RateLimits
