@@ -42,6 +42,11 @@ common:
     url: rate-limits/uber-direct-rate-limits.yml
   - type: FinOps
     url: finops/uber-direct-finops.yml
+  - type: Integrations
+    url: https://www.uber.com/us/en/marketplace/
+integrations:
+  - name: Download the Uber app for Android
+  - name: Download the Uber app for IOS
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
