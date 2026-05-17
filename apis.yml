@@ -1,7 +1,7 @@
 aid: uber-direct
 url: https://raw.githubusercontent.com/api-evangelist/uber-direct/refs/heads/main/apis.yml
 name: Uber Direct
-x-type: company
+kind: company
 description: >-
   Uber Direct is Uber's last-mile delivery-as-a-service platform that lets merchants dispatch couriers via the Uber network for on-demand and scheduled deliveries.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
