@@ -1,0 +1,400 @@
+{
+  "item": [
+    {
+      "id": "fe54a0f1-a54b-490b-baed-72c993edb79e",
+      "name": "Create a delivery quote",
+      "request": {
+        "name": "Create a delivery quote",
+        "description": {},
+        "url": {
+          "path": [
+            "v1",
+            "customers",
+            ":customer_id",
+            "delivery_quotes"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "customer_id",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"pickup_address\": \"<string>\",\n  \"dropoff_address\": \"<string>\",\n  \"pickup_latitude\": \"<number>\",\n  \"pickup_longitude\": \"<number>\",\n  \"dropoff_latitude\": \"<number>\",\n  \"dropoff_longitude\": \"<number>\",\n  \"pickup_phone_number\": \"<string>\",\n  \"dropoff_phone_number\": \"<string>\",\n  \"pickup_ready_dt\": \"<dateTime>\",\n  \"pickup_deadline_dt\": \"<dateTime>\",\n  \"dropoff_ready_dt\": \"<dateTime>\",\n  \"dropoff_deadline_dt\": \"<dateTime>\",\n  \"manifest_total_value\": \"<integer>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "ac30a7c2-8557-41ac-bcb2-e576cfdab71d",
+          "name": "Delivery quote",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "customers",
+                ":customer_id",
+                "delivery_quotes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customer_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pickup_address\": \"<string>\",\n  \"dropoff_address\": \"<string>\",\n  \"pickup_latitude\": \"<number>\",\n  \"pickup_longitude\": \"<number>\",\n  \"dropoff_latitude\": \"<number>\",\n  \"dropoff_longitude\": \"<number>\",\n  \"pickup_phone_number\": \"<string>\",\n  \"dropoff_phone_number\": \"<string>\",\n  \"pickup_ready_dt\": \"<dateTime>\",\n  \"pickup_deadline_dt\": \"<dateTime>\",\n  \"dropoff_ready_dt\": \"<dateTime>\",\n  \"dropoff_deadline_dt\": \"<dateTime>\",\n  \"manifest_total_value\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"created\": \"1957-06-08T18:03:22.250Z\",\n  \"expires\": \"1977-08-21T20:17:33.060Z\",\n  \"fee\": 4549,\n  \"currency\": \"string\",\n  \"duration\": 1714,\n  \"pickup_duration\": 56,\n  \"dropoff_eta\": \"1982-09-11T18:26:37.725Z\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "a647b4b3-6bc3-4dee-a8b5-b8c18a4d51f1",
+      "name": "Create a delivery",
+      "request": {
+        "name": "Create a delivery",
+        "description": {},
+        "url": {
+          "path": [
+            "v1",
+            "customers",
+            ":customer_id",
+            "deliveries"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "customer_id",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"pickup_address\": \"<string>\",\n  \"dropoff_address\": \"<string>\",\n  \"manifest_items\": [\n    {\n      \"name\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"size\": \"<string>\",\n      \"price\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"size\": \"<string>\",\n      \"price\": \"<integer>\"\n    }\n  ],\n  \"quote_id\": \"<string>\",\n  \"pickup_name\": \"<string>\",\n  \"pickup_phone_number\": \"<string>\",\n  \"dropoff_name\": \"<string>\",\n  \"dropoff_phone_number\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "011d234a-e9fe-41d5-ab7d-9168a6445ed4",
+          "name": "Delivery created",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "customers",
+                ":customer_id",
+                "deliveries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customer_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pickup_address\": \"<string>\",\n  \"dropoff_address\": \"<string>\",\n  \"manifest_items\": [\n    {\n      \"name\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"size\": \"<string>\",\n      \"price\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"size\": \"<string>\",\n      \"price\": \"<integer>\"\n    }\n  ],\n  \"quote_id\": \"<string>\",\n  \"pickup_name\": \"<string>\",\n  \"pickup_phone_number\": \"<string>\",\n  \"dropoff_name\": \"<string>\",\n  \"dropoff_phone_number\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"quote_id\": \"string\",\n  \"status\": \"canceled\",\n  \"complete\": false,\n  \"kind\": \"string\",\n  \"created\": \"2005-09-18T07:25:17.812Z\",\n  \"updated\": \"1999-06-26T06:29:34.560Z\",\n  \"pickup_eta\": \"1951-03-04T22:19:52.438Z\",\n  \"dropoff_eta\": \"1948-07-01T22:59:53.696Z\",\n  \"fee\": 6390,\n  \"currency\": \"string\",\n  \"tracking_url\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "b6922a61-4f7b-46dc-9ab2-b0a13a372dc3",
+      "name": "List deliveries",
+      "request": {
+        "name": "List deliveries",
+        "description": {},
+        "url": {
+          "path": [
+            "v1",
+            "customers",
+            ":customer_id",
+            "deliveries"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "limit",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "offset",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "filter",
+              "value": "<string>"
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "customer_id",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "e918fb1a-5a64-4598-9d03-9ab9bae53d9f",
+          "name": "A page of deliveries",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "customers",
+                ":customer_id",
+                "deliveries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "offset",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "filter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customer_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"next_href\": \"string\",\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"quote_id\": \"string\",\n      \"status\": \"dropoff\",\n      \"complete\": false,\n      \"kind\": \"string\",\n      \"created\": \"1964-06-02T00:07:33.695Z\",\n      \"updated\": \"1961-07-13T19:07:30.408Z\",\n      \"pickup_eta\": \"2006-11-19T20:45:02.462Z\",\n      \"dropoff_eta\": \"1956-06-13T04:19:06.090Z\",\n      \"fee\": 9187,\n      \"currency\": \"string\",\n      \"tracking_url\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"quote_id\": \"string\",\n      \"status\": \"pending\",\n      \"complete\": true,\n      \"kind\": \"string\",\n      \"created\": \"1992-06-16T06:08:28.768Z\",\n      \"updated\": \"1962-10-27T14:14:08.193Z\",\n      \"pickup_eta\": \"1967-04-10T06:04:28.791Z\",\n      \"dropoff_eta\": \"2023-03-15T19:01:59.752Z\",\n      \"fee\": 5699,\n      \"currency\": \"string\",\n      \"tracking_url\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.uber.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "eats.deliveries"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.uber.com/oauth/v2/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0d879dce-4c10-4bf0-b87e-72ee7ed88658",
+    "name": "Uber Direct API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Uber Direct is Uber's last-mile delivery-as-a-service platform that lets merchants dispatch couriers on the Uber network for on-demand and scheduled deliveries. The API is authenticated with OAuth 2.0 client credentials issued from the Uber Developer dashboard.\n\nContact Support:\n Name: Uber Direct Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}
