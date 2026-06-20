@@ -4,7 +4,7 @@ name: Uber Direct
 kind: company
 description: >-
   Uber Direct is Uber's last-mile delivery-as-a-service platform that lets merchants dispatch couriers via the Uber network for on-demand and scheduled deliveries.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Logistics
   - Last Mile Delivery
@@ -19,7 +19,7 @@ apis:
     name: Uber Direct API
     description: >-
       Uber Direct API (DaaS) for quoting, creating, tracking, and managing deliveries through the Uber courier network. Includes Direct, Organizations, Courier Pick & Pack, Refund, and Business Location Management APIs plus webhook subscriptions.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developer.uber.com/docs/deliveries
     baseURL: https://api.uber.com/v1/customers
     tags:
