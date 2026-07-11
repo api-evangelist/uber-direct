@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/uber-direct-openapi.yml
+schemes:
+- name: oauth2
+  source: openapi/uber-direct-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.uber.com/oauth/v2/token
+scopes:
+- scope: eats.deliveries
+  description: Access to Uber Direct delivery operations
+  flows:
+  - clientCredentials
+  sources:
+  - openapi/uber-direct-openapi.yml

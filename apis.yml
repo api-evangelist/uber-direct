@@ -32,6 +32,10 @@ apis:
       - type: Authentication
         url: https://developer.uber.com/docs/deliveries/guides/authentication
 common:
+  - type: Authentication
+    url: authentication/uber-direct-authentication.yml
+  - type: OAuthScopes
+    url: scopes/uber-direct-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/uber
   - type: Website
