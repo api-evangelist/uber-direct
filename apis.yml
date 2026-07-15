@@ -32,6 +32,8 @@ apis:
       - type: Authentication
         url: https://developer.uber.com/docs/deliveries/guides/authentication
 common:
+  - type: AgenticAccess
+    url: agentic-access/uber-direct-agentic-access.yml
   - type: DomainSecurity
     url: security/uber-direct-domain-security.yml
   - type: Authentication
