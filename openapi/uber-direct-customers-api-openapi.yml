@@ -1,0 +1,240 @@
+openapi: 3.1.0
+info:
+  title: Uber Direct Customers API
+  version: v1
+  description: Uber Direct is Uber's last-mile delivery-as-a-service platform that lets merchants dispatch couriers on the Uber network for on-demand and scheduled deliveries. The API is authenticated with OAuth 2.0 client credentials issued from the Uber Developer dashboard.
+  contact:
+    name: Uber Direct Developer Portal
+    url: https://developer.uber.com/docs/deliveries
+servers:
+- url: https://api.uber.com
+  description: Uber API production
+security:
+- oauth2:
+  - eats.deliveries
+tags:
+- name: Customers
+paths:
+  /v1/customers/{customer_id}/delivery_quotes:
+    parameters:
+    - in: path
+      name: customer_id
+      required: true
+      schema:
+        type: string
+    post:
+      summary: Create a delivery quote
+      operationId: createDeliveryQuote
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeliveryQuoteRequest'
+      responses:
+        '200':
+          description: Delivery quote
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeliveryQuote'
+      tags:
+      - Customers
+  /v1/customers/{customer_id}/deliveries:
+    parameters:
+    - in: path
+      name: customer_id
+      required: true
+      schema:
+        type: string
+    post:
+      summary: Create a delivery
+      operationId: createDelivery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeliveryRequest'
+      responses:
+        '200':
+          description: Delivery created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Delivery'
+      tags:
+      - Customers
+    get:
+      summary: List deliveries
+      operationId: listDeliveries
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          type: integer
+      - in: query
+        name: offset
+        schema:
+          type: integer
+      - in: query
+        name: filter
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A page of deliveries
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  next_href:
+                    type: string
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Delivery'
+      tags:
+      - Customers
+components:
+  schemas:
+    DeliveryRequest:
+      type: object
+      required:
+      - pickup_address
+      - dropoff_address
+      - manifest_items
+      properties:
+        quote_id:
+          type: string
+        pickup_name:
+          type: string
+        pickup_address:
+          type: string
+        pickup_phone_number:
+          type: string
+        dropoff_name:
+          type: string
+        dropoff_address:
+          type: string
+        dropoff_phone_number:
+          type: string
+        manifest_items:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              quantity:
+                type: integer
+              size:
+                type: string
+              price:
+                type: integer
+    Delivery:
+      type: object
+      properties:
+        id:
+          type: string
+        quote_id:
+          type: string
+        status:
+          type: string
+          enum:
+          - pending
+          - pickup
+          - pickup_complete
+          - dropoff
+          - delivered
+          - canceled
+          - returned
+        complete:
+          type: boolean
+        kind:
+          type: string
+        created:
+          type: string
+          format: date-time
+        updated:
+          type: string
+          format: date-time
+        pickup_eta:
+          type: string
+          format: date-time
+        dropoff_eta:
+          type: string
+          format: date-time
+        fee:
+          type: integer
+        currency:
+          type: string
+        tracking_url:
+          type: string
+    DeliveryQuote:
+      type: object
+      properties:
+        id:
+          type: string
+        created:
+          type: string
+          format: date-time
+        expires:
+          type: string
+          format: date-time
+        fee:
+          type: integer
+        currency:
+          type: string
+        duration:
+          type: integer
+        pickup_duration:
+          type: integer
+        dropoff_eta:
+          type: string
+          format: date-time
+    DeliveryQuoteRequest:
+      type: object
+      required:
+      - pickup_address
+      - dropoff_address
+      properties:
+        pickup_address:
+          type: string
+        dropoff_address:
+          type: string
+        pickup_latitude:
+          type: number
+        pickup_longitude:
+          type: number
+        dropoff_latitude:
+          type: number
+        dropoff_longitude:
+          type: number
+        pickup_phone_number:
+          type: string
+        dropoff_phone_number:
+          type: string
+        pickup_ready_dt:
+          type: string
+          format: date-time
+        pickup_deadline_dt:
+          type: string
+          format: date-time
+        dropoff_ready_dt:
+          type: string
+          format: date-time
+        dropoff_deadline_dt:
+          type: string
+          format: date-time
+        manifest_total_value:
+          type: integer
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.uber.com/oauth/v2/token
+          scopes:
+            eats.deliveries: Access to Uber Direct delivery operations
