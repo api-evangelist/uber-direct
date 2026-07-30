@@ -4,7 +4,20 @@ name: Uber Direct
 kind: company
 description: >-
   Uber Direct is Uber's last-mile delivery-as-a-service platform that lets merchants dispatch couriers via the Uber network for on-demand and scheduled deliveries.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/uber-direct.png
 tags:
   - Logistics
   - Last Mile Delivery
@@ -15,22 +28,34 @@ created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
 apis:
-  - aid: uber-direct:uber-direct-api
-    name: Uber Direct API
-    description: >-
-      Uber Direct API (DaaS) for quoting, creating, tracking, and managing deliveries through the Uber courier network. Includes Direct, Organizations, Courier Pick & Pack, Refund, and Business Location Management APIs plus webhook subscriptions.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://developer.uber.com/docs/deliveries
-    baseURL: https://api.uber.com/v1/customers
-    tags:
-      - Logistics
-      - Delivery
-      - REST
-    properties:
-      - type: Documentation
-        url: https://developer.uber.com/docs/deliveries
-      - type: Authentication
-        url: https://developer.uber.com/docs/deliveries/guides/authentication
+- aid: uber-direct:uber-direct-api
+  name: Uber Direct API
+  description: >-
+    Uber Direct API (DaaS) for quoting, creating, tracking, and managing deliveries through the Uber courier
+    network. Includes Direct, Organizations, Courier Pick & Pack, Refund, and Business Location Management
+    APIs plus webhook subscriptions.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.uber.com/docs/deliveries
+  baseURL: https://api.uber.com/v1/customers
+  tags:
+  - Logistics
+  - Delivery
+  - REST
+  properties:
+  - type: Documentation
+    url: https://developer.uber.com/docs/deliveries
+  - type: Authentication
+    url: https://developer.uber.com/docs/deliveries/guides/authentication
+- aid: uber-direct:uber-direct-customers-api
+  name: Uber Direct Customers API
+  description: The Customers API from Uber Direct — 2 operation(s) for customers.
+  humanURL: https://developer.uber.com/docs/deliveries
+  baseURL: https://api.uber.com/v1/customers
+  tags:
+  - Customers
+  properties:
+  - type: OpenAPI
+    url: openapi/uber-direct-customers-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/uber-direct-agentic-access.yml
