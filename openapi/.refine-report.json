@@ -1,0 +1,14 @@
+{
+  "provider": "uber-direct",
+  "sources": [
+    "uber-direct-customers-api-openapi.yml"
+  ],
+  "outputs": [
+    "uber-direct-customers-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
