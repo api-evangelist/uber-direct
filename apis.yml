@@ -69,6 +69,9 @@ apis:
   - type: OpenAPI
     url: openapi/uber-direct-customers-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/uber-direct-capability-edges.yml
+    name: Uber Direct Business Capability Map
   - type: AgenticAccess
     url: agentic-access/uber-direct-agentic-access.yml
   - type: DomainSecurity
