@@ -4,6 +4,18 @@ name: Uber Direct
 kind: company
 description: >-
   Uber Direct is Uber's last-mile delivery-as-a-service platform that lets merchants dispatch couriers via the Uber network for on-demand and scheduled deliveries.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
