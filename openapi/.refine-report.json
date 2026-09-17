@@ -1,7 +1,7 @@
 {
   "provider": "uber-direct",
   "sources": [
-    "uber-direct-customers-api-openapi.yml"
+    "_original/uber-direct-openapi.yml"
   ],
   "outputs": [
     "uber-direct-customers-api-openapi.yml"
@@ -9,6 +9,16 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "uber-direct-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "uber-direct-openapi.yml: tagged paths POST /v1/customers/{customer_id}/delivery_quotes -> Customers",
+    "uber-direct-openapi.yml: tagged paths POST /v1/customers/{customer_id}/deliveries -> Customers",
+    "uber-direct-openapi.yml: tagged paths GET /v1/customers/{customer_id}/deliveries -> Customers",
+    "uber-direct-openapi.yml: declared missing tag: Customers",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "uber-direct-customers-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
