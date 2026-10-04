@@ -99,6 +99,42 @@ paths:
       - Customers
 components:
   schemas:
+    DeliveryQuoteRequest:
+      type: object
+      required:
+      - pickup_address
+      - dropoff_address
+      properties:
+        pickup_address:
+          type: string
+        dropoff_address:
+          type: string
+        pickup_latitude:
+          type: number
+        pickup_longitude:
+          type: number
+        dropoff_latitude:
+          type: number
+        dropoff_longitude:
+          type: number
+        pickup_phone_number:
+          type: string
+        dropoff_phone_number:
+          type: string
+        pickup_ready_dt:
+          type: string
+          format: date-time
+        pickup_deadline_dt:
+          type: string
+          format: date-time
+        dropoff_ready_dt:
+          type: string
+          format: date-time
+        dropoff_deadline_dt:
+          type: string
+          format: date-time
+        manifest_total_value:
+          type: integer
     Delivery:
       type: object
       properties:
@@ -138,42 +174,28 @@ components:
           type: string
         tracking_url:
           type: string
-    DeliveryQuoteRequest:
+    DeliveryQuote:
       type: object
-      required:
-      - pickup_address
-      - dropoff_address
       properties:
-        pickup_address:
+        id:
           type: string
-        dropoff_address:
-          type: string
-        pickup_latitude:
-          type: number
-        pickup_longitude:
-          type: number
-        dropoff_latitude:
-          type: number
-        dropoff_longitude:
-          type: number
-        pickup_phone_number:
-          type: string
-        dropoff_phone_number:
-          type: string
-        pickup_ready_dt:
+        created:
           type: string
           format: date-time
-        pickup_deadline_dt:
+        expires:
           type: string
           format: date-time
-        dropoff_ready_dt:
-          type: string
-          format: date-time
-        dropoff_deadline_dt:
-          type: string
-          format: date-time
-        manifest_total_value:
+        fee:
           type: integer
+        currency:
+          type: string
+        duration:
+          type: integer
+        pickup_duration:
+          type: integer
+        dropoff_eta:
+          type: string
+          format: date-time
     DeliveryRequest:
       type: object
       required:
@@ -208,28 +230,6 @@ components:
                 type: string
               price:
                 type: integer
-    DeliveryQuote:
-      type: object
-      properties:
-        id:
-          type: string
-        created:
-          type: string
-          format: date-time
-        expires:
-          type: string
-          format: date-time
-        fee:
-          type: integer
-        currency:
-          type: string
-        duration:
-          type: integer
-        pickup_duration:
-          type: integer
-        dropoff_eta:
-          type: string
-          format: date-time
   securitySchemes:
     oauth2:
       type: oauth2
